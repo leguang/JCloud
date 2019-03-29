@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("cn.itsite.jbase.mapper")
 public class JBaseApplication {
 
     public static void main(String[] args) {

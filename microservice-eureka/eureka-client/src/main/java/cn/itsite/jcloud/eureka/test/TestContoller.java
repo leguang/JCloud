@@ -1,7 +1,7 @@
-package cn.itsite.jbase.test;
+package cn.itsite.jcloud.eureka.test;
 
-import cn.itsite.jbase.common.base.BaseResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,10 +12,18 @@ import java.util.Map;
 @Slf4j
 public class TestContoller {
 
+    @Value("${cn.itsite}")
+    private String port;
+
     @GetMapping("/test")
-    public BaseResponse getUser() {
+    public Map getUser() {
+
         Map<String, String> map = new HashMap<>();
-        map.put("11", "11");
-        return BaseResponse.success(map);
+        map.put("11", port);
+
+//        if (true)
+//            throw new NullPointerException();
+        return map;
     }
+
 }
